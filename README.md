@@ -2,20 +2,7 @@
 
 The ultimate habit tracker!
 
-## Table of Contents
 
-- [Installation & Usage](#installation--usage)
-  - [Installation](#installation)
-  - [Local Usage](#usage)
-  - [Deployment](#deployment)
-- [See the Sites](#see-the-sites)
-- [Technologies](#technologies)
-- [Changelog](#changelog)
-- [Wins & Challenges](#wins--challenges)
-  - [Wins](#wins)
-  - [Challenges](#challenges)
-- [Bugs](#bugs)
-- [Goals for the Future!](#goals-for-the-future)
 
 ## Installation & Usage
 
@@ -23,9 +10,8 @@ The ultimate habit tracker!
 
 
 ### Local Usage
-
-### Deployment
-
+ - Clone and dowload repo
+ - load index.html on your browser
 
 
 #### Testing
@@ -35,13 +21,12 @@ The ultimate habit tracker!
 ## See the Sites
 
 
-## Technologies used
+
 
 #### Planning & Design Tools
-
-
-#### HTML/CSS/JS Tools
-
+ - [View our figma designed for webpage](https://www.figma.com/file/lZ4kwqNop0eLKyxfhj3ngA/trackify-team-library?node-id=415%3A3)
+ - [View our Architectural design](https://lucid.app/lucidchart/8d6324ac-22f3-45e4-8b4f-5884243c87e0/edit?invitationId=inv_9674ec5a-e0ab-4494-a57e-c21fd735feaa&referringApp=slack&page=0_0#)
+ - Can have a look at our kanban boards in projects
 
 ## Changelog
 
@@ -50,7 +35,7 @@ The ultimate habit tracker!
 
 ### Wins
 
--
+
 ### Challenges
 
 ## Bugs
@@ -67,18 +52,30 @@ The ultimate habit tracker!
 - [x] write this README
 - [x] design using figma
 - [x] fill kanban board
+- [x] Create architectural design
 
 ### functionality
 
-- [x] Login
-### technical
+- [ ] Login
+- [ ] Sign up
+- [ ] View habits
+- [ ] Create Habits 
+- [ ] Update habits
+- [ ] View habits history
+
 
 
 ### technologies
 
-- [x] express
-- [x] cors
+- [ ] express
+- [ ] cors
 - [ ] Node JS
 - [ ] Docker
 - [ ] MongoDB
-- [ ] 
+- [ ] Watchify
+- [ ] Day js
+- [ ] Bootstrap
+- [ ] Netlify
+- [ ] Jest
+- [ ] Supertest
+- [ ] JWT
