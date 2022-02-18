@@ -8,9 +8,10 @@ The ultimate habit tracker!
 
 ### Installation
 
+ - Clone and dowload repo
 
 ### Local Usage
- - Clone and dowload repo
+
  - load index.html on your browser
 
 
