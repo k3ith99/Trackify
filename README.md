@@ -14,7 +14,7 @@ The ultimate habit tracker!
  - load index.html on your browser
 
 
-#### Testing
+
 
 
 
@@ -23,7 +23,7 @@ The ultimate habit tracker!
 
 
 
-#### Planning & Design Tools
+## Planning & Design Tools
  - [View our figma designed for webpage](https://www.figma.com/file/lZ4kwqNop0eLKyxfhj3ngA/trackify-team-library?node-id=415%3A3)
  - [View our Architectural design](https://lucid.app/lucidchart/8d6324ac-22f3-45e4-8b4f-5884243c87e0/edit?invitationId=inv_9674ec5a-e0ab-4494-a57e-c21fd735feaa&referringApp=slack&page=0_0#)
  - Can have a look at our kanban boards in projects
@@ -31,12 +31,17 @@ The ultimate habit tracker!
 ## Changelog
 
 
+## Testing
+
+
 ## Wins & Challenges
+
 
 ### Wins
 
 
 ### Challenges
+
 
 ## Bugs
 
