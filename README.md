@@ -1,11 +1,6 @@
 # Welcome to Trackify!
 
-
-
-The anonymous blogging site for your craziest stories! <br>
-Want to tell people about your wildest conspiracy theories? **_Go for it!_** <br>
-Want to see what people think of your new short story? **_Get it submitted!_** <br>
-Even if you just want to tell the world about the fact you eat cold baked beans without them tracing it back to you, then this is still the perfect place to do it!
+The ultimate habit tracker!
 
 ## Table of Contents
 
@@ -44,14 +39,9 @@ Even if you just want to tell the world about the fact you eat cold baked beans 
 
 #### Planning & Design Tools
 
-- Github Projects - view our Kanban board in this repo
-- Figma ([View our template here](https://www.figma.com/file/irC9SOqgXFVlGknEMVmSn9/super-coders?node-id=2%3A3))
 
 #### HTML/CSS/JS Tools
 
-- Tailwind Framework
-- Browserify
-- Watchify
 
 ## Changelog
 
@@ -88,9 +78,7 @@ Even if you just want to tell the world about the fact you eat cold baked beans 
 
 - [x] express
 - [x] cors
-- [x] concurrently -DEV
-- [x] watchify -DEV
-- [x] jest -DEV
-- [x] supertest -DEV
-- [x] nodemon -DEV
-- [x] jest-fetch-mock -DEV
+- [ ] Node JS
+- [ ] Docker
+- [ ] MongoDB
+- [ ] 
