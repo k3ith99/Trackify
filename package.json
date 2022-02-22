@@ -4,7 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "concurrently \"watchify ./static/js/layout.js -o bundle.js\" \"http-server\"",
+    "test": "jest",
+    "coverage": "jest --coverage",
+    "bundle": "watchify ./static/js/layout.js -o bundle.js"
   },
   "repository": {
     "type": "git",
@@ -15,5 +18,14 @@
   "bugs": {
     "url": "https://github.com/k3ith99/Trackify/issues"
   },
-  "homepage": "https://github.com/k3ith99/Trackify#readme"
+  "homepage": "https://github.com/k3ith99/Trackify#readme",
+  "devDependencies": {
+    "concurrently": "^7.0.0",
+    "http-server": "^14.1.0",
+    "watchify": "^4.0.0"
+  },
+  "dependencies": {
+    "bootstrap": "^5.1.3",
+    "jest": "^27.5.1"
+  }
 }

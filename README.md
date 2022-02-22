@@ -85,3 +85,5 @@ The ultimate habit tracker!
 - [ ] Jest
 - [ ] Supertest
 - [ ] JWT
+- [ ] concurrently
+- [ ] http-server
