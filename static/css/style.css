@@ -1,5 +1,12 @@
 @media (min-width: 768px) {
-    .homepage-sections {
+    #homepage-sections {
         display: flex
     }
+
+    #habit-cards {
+        display: flex;
+        flex-direction: row;
+        
+    }
+    
 }

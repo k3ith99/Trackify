@@ -29,7 +29,7 @@
   </header>
 
 <main class="px-5 mt-5">
-    <div class="homepage-sections">
+    <div id="homepage-sections">
         <div id="side-boxes" class="">
             <div id="info" class="m-3 p-5 text-black rounded-3" style="background-color:#a4c48f">
                 <h2>Info</h2>
@@ -37,16 +37,18 @@
             </div>
             <div id="login" class="p-5 m-3 rounded-3 text-black" style="background-color:#a4c48f">
                 <h2>Sign in/Register</h2>
-                <div class="form-floating">
-                    <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
-                    <label for="floatingInput p-5">Email address</label>
-                </div>
-                <div class="form-floating mt-1">
-                    <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
-                    <label for="floatingPassword">Password</label>
-                </div>
-                <button class="w-100 mt-3 btn btn-lg btn-outline-dark" type="submit">Sign in</button>
-                <button class="w-100 mt-3 btn btn-lg btn-outline-dark" type="submit">Register</button>
+                <form action="submit">
+                    <div class="form-floating">
+                        <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+                        <label for="floatingInput p-5">Email address</label>
+                    </div>
+                    <div class="form-floating mt-1">
+                        <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+                        <label for="floatingPassword">Password</label>
+                    </div>
+                    <button id="signin" class="w-100 mt-3 btn btn-lg btn-outline-dark" type="submit">Sign in</button>
+                    <button id="register" class="w-100 mt-3 btn btn-lg btn-outline-dark" type="submit">Register</button>
+                </form>
             </div>
         </div>
         <div id="long-box">
@@ -56,7 +58,22 @@
             </div>
         </div>
     </div>
-    
+    <div id="habits-section" >
+        <button class="btn m-4 btn-outline-light">Create Habit</button>
+        <!-- add form w/ class hidden -->
+        <div id="habit-cards" class="hidden">
+            <div class="habit p-5 m-3 rounded-3 text-black" style="background-color:#a4c48f">
+                <h2 class="habit-title">Drink 2L of Water</h2>
+                <p>Habit details</p>
+                <button id="complete" class="mt-3 mx-3 btn btn-lg btn-outline-dark" type="submit">Complete Habit</button>
+            </div>
+            <div class="habit p-5 m-3 rounded-3 text-black" style="background-color:#a4c48f">
+                <h2 class="habit-title">Drink 2L of Water</h2>
+                <button class="mt-3 mx-3 btn btn-lg btn-outline-dark" type="submit">Show More</button>
+                <button class="mt-3 mx-3 btn btn-lg btn-outline-dark" type="submit">Complete Habit</button>
+            </div>
+        </div>
+    </div>
   </main>
  </div>   
 </body>
