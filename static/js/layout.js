@@ -1,6 +1,7 @@
 const signin = document.getElementById("signin");
 const homepage = document.getElementById("homepage-section")
 const habits = document.getElementById("habits-section")
+
 const habitCards = document.getElementById("habit-cards")
 const habitsHTML = require("../templates/habits")
 signin.addEventListener('click', showHabitsSection)
@@ -77,3 +78,12 @@ function updateHabit(data){
 
 
 module.exports = {showHabitsSection, appendHabit,deleteHabit};
+=======
+
+signin.addEventListener('click', showHabitsSection)
+
+function showHabitsSection(e) {
+    e.preventDefault();
+    homepage.innerHTML = e.target.style.display.none;
+}
+
