@@ -1,12 +1,28 @@
 @media (min-width: 768px) {
     #homepage-sections {
-        display: flex
+        display: flex;
     }
 
-    #habit-cards {
+    #habit-card {
         display: flex;
         flex-direction: row;
         
     }
+
+}
+
+@media (min-width: 700px) {
+    #habit-section {
+        display: flex;
+        flex-direction: row;
+    }
+}
+
+.habit {
+    background-color:#a4c48f;
     
+}
+
+#create-habit {
+    background-color:#a4c48f;
 }
