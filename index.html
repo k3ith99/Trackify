@@ -5,8 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./static/css/style.css">
+    <link rel="shortcut icon" href="./static/images/images.jpeg" type="image/x-icon">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <script defer src="./static/js/api.js"></script>
+    <script defer src="./static/js/layout.js"></script>
     <title>Trackify</title>
     <style>
        
@@ -29,7 +30,7 @@
   </header>
 
 <main class="px-5 mt-5">
-    <div id="homepage-sections">
+    <div id="homepage-sections" style="display:none">
         <div id="side-boxes" class="">
             <div id="info" class="m-3 p-5 text-black rounded-3" style="background-color:#a4c48f">
                 <h2>Info</h2>
@@ -59,15 +60,48 @@
         </div>
     </div>
     <div id="habits-section" >
-        <button class="btn m-4 btn-outline-light">Create Habit</button>
-        <!-- add form w/ class hidden -->
-        <div id="habit-cards" class="hidden">
-            <div class="habit p-5 m-3 rounded-3 text-black" style="background-color:#a4c48f">
+        <div id="habit-cards" class="mt-2">
+            <div id="create-habit" class="shadow p-5 m-3 rounded-3">
+                <h2>Create Habit</h2>
+                <form action="">
+                    <!-- form data: title, frequency, goal -->
+                    <div class="form-floating text-black">
+                        <input type="text" class="form-control" id="title" placeholder="Habit">
+                        <label for="title p-5">Habit</label>
+                    </div>
+                    <div class="form-floating text-black">
+                        <input type="text" class="form-control" id="goal" placeholder="goal">
+                        <label for="goal p-5">Goal</label>
+                    </div>
+                    <h4 class="mt-3">Frequency:</h4>
+                    <div class="btn-group shadow" role="group" aria-label="Basic radio toggle button group">
+                        <input type="radio" class="btn-check" name="btnradio" id="daily" autocomplete="off" checked>
+                        <label class="btn btn-outline-light" for="daily">Daily</label>
+                        <input type="radio" class="btn-check" name="btnradio" id="weekly" autocomplete="off">
+                        <label class="btn btn-outline-light" for="weekly">Weekly</label>
+                        <input type="radio" class="btn-check" name="btnradio" id="monthly" autocomplete="off">
+                        <label class="btn btn-outline-light" for="monthly">Monthly</label>
+                        <input type="radio" class="btn-check" name="btnradio" id="custom" autocomplete="off">
+                        <label class="btn btn-outline-light" for="custom">Custom</label>
+                        <div id="textbox"></div>
+                      </div>
+                    
+                    
+                </form>
+                <button class="shadow btn m-4 btn-outline-light">Create Habit</button>
+            </div>
+            <div class="dropdown">
+
+            </div>
+            <div class="habit shadow p-5 m-3 rounded-3 text-black">
                 <h2 class="habit-title">Drink 2L of Water</h2>
                 <p>Habit details</p>
                 <button id="complete" class="mt-3 mx-3 btn btn-lg btn-outline-dark" type="submit">Complete Habit</button>
             </div>
-            <div class="habit p-5 m-3 rounded-3 text-black" style="background-color:#a4c48f">
+        
+            <button id="delete" class="mt-3 mx-3 btn btn-lg btn-outline-dark" type="submit">Delete Habit</button>
+        </div>
+            <div class="habit shadow p-5 m-3 rounded-3 text-black">
                 <h2 class="habit-title">Drink 2L of Water</h2>
                 <button class="mt-3 mx-3 btn btn-lg btn-outline-dark" type="submit">Show More</button>
                 <button class="mt-3 mx-3 btn btn-lg btn-outline-dark" type="submit">Complete Habit</button>
