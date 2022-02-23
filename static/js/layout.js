@@ -92,7 +92,7 @@ function updateHabit(data){
 
 
 module.exports = {showHabitsSection, appendHabit,deleteHabit};
-=======
+
 
 signin.addEventListener('click', showHabitsSection)
 
