@@ -2,7 +2,7 @@ const signin = document.getElementById("signin");
 const homepage = document.getElementById("homepage-section")
 const habits = document.getElementById("habits-section")
 const custom = document.getElementById("custom")
-
+const createbtn = document.querySelector("#shadow btn m-4 btn-outline-light")
 
 
 const showTextbox = (e) => {
@@ -91,7 +91,7 @@ function updateHabit(data){
 
 
 
-module.exports = {showHabitsSection, appendHabit,deleteHabit};
+module.exports = {showHabitsSection, appendHabit,};
 
 
 signin.addEventListener('click', showHabitsSection)
@@ -100,4 +100,7 @@ function showHabitsSection(e) {
     e.preventDefault();
     homepage.innerHTML = e.target.style.display('none');
 }
+
+
+
 
