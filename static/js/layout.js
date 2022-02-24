@@ -2,6 +2,7 @@ const signin = document.getElementById("signin");
 const homepage = document.getElementById("homepage-section")
 const habits = document.getElementById("habits-section")
 const custom = document.getElementById("custom")
+const requests = require('./requests');
 
 
 
@@ -22,14 +23,36 @@ const testbtn = document.getElementById('testbtn')
 
 testbtn.addEventListener('click', showHomepage)
 
-function showTest(){
-    const test = document.getElementById('test');
-    const habit = document.createElement('button');
-    habit.append(test);
+function showHomepage() {
+    //id=info
+    let sideBoxesDiv = document.getElementById("side-boxes")
+    let infoDiv = document.createElement("div")
+    let title = document.createElement('h2')
+    let para = document.createElement('p')
+    title.textContent += "Info"
+    para.textContent += "information about the tracker (what it is, what it can be used for, how long they can do it for etc)"
+    infoDiv.setAttribute('style', 'background-color:#a4c48f')
+    infoDiv.setAttribute('id', 'info')
+    infoDiv.classList.add('shadow', 'rounded-3', 'm-3', 'p-5', 'text-black')
+    sideBoxesDiv.append(infoDiv)
+    infoDiv.append(title)
+    infoDiv.append(para)
+
+    //id=login
+    
+    let loginDiv = document.createElement("div")
+    let form = document.createElement('form')
+    loginDiv.setAttribute('style', 'background-color:#a4c48f')
+    loginDiv.setAttribute('id', 'info')
+    loginDiv.classList.add('shadow', 'rounded-3', 'm-3', 'p-5', 'text-black')
+    title.textContent += "Sign in/Register"
+    form.textContent += "information about the tracker (what it is, what it can be used for, how long they can do it for etc)"
+    sideBoxesDiv.append(loginDiv)
+    loginDiv.append(title)
+    loginDiv.append(form)
+
+    
 }
-
-
-
 
 
 
@@ -99,9 +122,10 @@ function formatCard(newDiv, data){
     newDiv.append(frequency)
     newDiv.append(streak)
     return newDiv
-
-
+    
+    
 }
+
 
 
 function updateHabit(data){
@@ -109,11 +133,6 @@ function updateHabit(data){
 
 }
 
-function showHomepage() {
-    let info = document.getElementById("info");
-    info.createElement('h2').textContent += "Info"
-    
-}
 
 
 
