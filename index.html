@@ -29,13 +29,9 @@
     </header>
 
     <main class="px-5 mt-5">
-        <div id="homepage-section">
-            <div id="side-boxes" class="">
-                <div id="info" class="shadow m-3 p-5 text-black rounded-3" style="background-color:#a4c48f">
-                    <h2>Info</h2>
-                    <p>information about the tracker (what it is, what it can be used for, how long they can do it for etc)</p>
-                </div>
-                <div id="login" class="shadow p-5 m-3 rounded-3 text-black" style="background-color:#a4c48f">
+        <div id="homepage-section" class="sections">
+            <div id="side-boxes">
+                <!-- <div id="login" class="shadow p-5 m-3 rounded-3 text-black" style="background-color:#a4c48f">
                     <h2>Sign in/Register</h2>
                     <form action="submit">
                         <div class="form-floating">
@@ -49,20 +45,20 @@
                         <button id="signin" class="w-100 mt-3 btn btn-lg btn-outline-dark" type="submit">Sign in</button>
                         <button id="register" class="w-100 mt-3 btn btn-lg btn-outline-dark" type="submit">Register</button>
                     </form>
-                </div>
+                </div> -->
             </div>
-            <div id="long-box">
+            <!-- <div id="long-box">
                 <div id="testimonials" class="shadow h-100 m-3 p-5 text-black rounded-3" style="background-color:#a4c48f">
                     <h2>Testimonials</h2>
                     <p>"This app is great!" <br> "I feel so motivated to reach my goals with this tracker"</p>
                 </div>
-            </div>
+            </div> -->
         </div>
-        <div id="habits-section" >
+        <div id="habits-section" class="sections">
             <div id="create-habit" class="shadow p-5 m-3 rounded-3">
                 <h2>Create Habit</h2>
                 <form action="">
-                    <div class="form-floating text-black">
+                    <div class="form-floating text-black shadow">
                         <input type="text" class="form-control" id="title" placeholder="Habit">
                         <label for="title p-5">Habit</label>
                     </div>
@@ -84,7 +80,7 @@
                         <input type="radio" class="btn-check" name="btnradio"  autocomplete="off">
                         <label id="custom" class="btn btn-outline-light" for="custom">Custom</label>
                     </div>
-                    <div class="mt-3 form-floating" id="textbox"></div>
+                    <div class="mt-3 form-floating shadow" id="textbox"></div>
                 </form>
                 <button class="shadow btn m-4 btn-outline-light">Create Habit</button>
             </div>
@@ -97,7 +93,11 @@
                     <button class="complete shadow mx-3 mt-3 btn btn-lg btn-outline-dark" type="submit">Complete Habit</button>
                     <button class="delete shadow mx-3 mt-3 btn btn-lg btn-outline-dark" type="submit">Delete Habit</button>
                 </div> 
-            </div>  
+         </div>  
+
+            <!-- Test for js -->
+            <button id="testbtn" type="submit">Click for homepage</button>
+            <div id="test" class="btn m-5"></div>
         </main>
     </body>   
 </html>
