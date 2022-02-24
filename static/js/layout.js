@@ -17,7 +17,7 @@ custom.addEventListener('click', showTextbox)
 
 
 const habitCards = document.getElementById("habit-cards")
-const habitsHTML = require("../templates/habits")
+//const habitsHTML = require("../templates/habits")
 signin.addEventListener('click', showHabitsSection)
 const deletebtn = document.getElementById("delete")
 const updatebtn = document.getElementById("complete")
@@ -91,7 +91,9 @@ function updateHabit(data){
 
 
 
-module.exports = {showHabitsSection, appendHabit, updateHabit};
+
+module.exports = {showHabitsSection, appendHabit,};
+
 
 
 signin.addEventListener('click', showHabitsSection)
@@ -100,4 +102,7 @@ function showHabitsSection(e) {
     e.preventDefault();
     homepage.innerHTML = e.target.style.display('none');
 }
+
+
+
 
