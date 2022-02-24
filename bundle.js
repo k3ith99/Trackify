@@ -26,32 +26,53 @@ testbtn.addEventListener('click', showHomepage)
 
 function showHomepage() {
     //id=info
+
     let sideBoxesDiv = document.getElementById("side-boxes")
     let infoDiv = document.createElement("div")
-    let title = document.createElement('h2')
+    let info = document.createElement('h2')
     let para = document.createElement('p')
-    title.textContent += "Info"
+
+    info.textContent += "Info"
     para.textContent += "information about the tracker (what it is, what it can be used for, how long they can do it for etc)"
     infoDiv.setAttribute('style', 'background-color:#a4c48f')
     infoDiv.setAttribute('id', 'info')
     infoDiv.classList.add('shadow', 'rounded-3', 'm-3', 'p-5', 'text-black')
+
     sideBoxesDiv.append(infoDiv)
-    infoDiv.append(title)
+    infoDiv.append(info)
     infoDiv.append(para)
 
     //id=login
     
     let loginDiv = document.createElement("div")
+    let login = document.createElement('h2')
     let form = document.createElement('form')
+    let divE = document.createElement('div')
+    let divP = document.createElement('div')
+    let email = document.createElement('input')
+    let password = document.createElement('input')
+
+    loginDiv.setAttribute('id', 'login')
     loginDiv.setAttribute('style', 'background-color:#a4c48f')
-    loginDiv.setAttribute('id', 'info')
     loginDiv.classList.add('shadow', 'rounded-3', 'm-3', 'p-5', 'text-black')
-    title.textContent += "Sign in/Register"
+    login.textContent += "Sign in/Register"
+    form.setAttribute('action', 'submit')
     form.textContent += "information about the tracker (what it is, what it can be used for, how long they can do it for etc)"
-    sideBoxesDiv.append(loginDiv)
+    divE.setAttribute('class', 'form-floating')
+    divP.classList.add('form-floating', 'mt-1')
+    email.setAttribute('type', 'email')
+    email.setAttribute('class', 'form-control')
+    email.setAttribute('placeholder', 'name@example.com')
+
+    divE.append(email)
+    divP.append(password)
+    form.append(divE)
+    form.append(divP)
     loginDiv.append(title)
     loginDiv.append(form)
+    sideBoxesDiv.append(loginDiv)
 
+    //id=testimonials
     
 }
 
