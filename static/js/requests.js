@@ -26,7 +26,7 @@ async function requestLogin(e){
         const token = await data.body.json().token;
         const user = jwt_decode(token);
         localStorage.setItem("token", token);
-        localStorage.setItem("userId", user.userId);
+        localStorage.setItem("userId", user.UserId);
         localStorage.setItem("userEmail", user.email);
 
     }
@@ -53,13 +53,12 @@ function currentUser(){
 
 async function getUserHabits(){
     try{
-        const token = localStorage.getItem("token")
-        const userId = jwt_decode(token).userId;
+        const token = localStorage.getItem("token");
         const options = { 
           method: "GET",
-          headers: { "Authorization": token},
+          headers: { "Authorization": token}
         };
-        let data = await fetch(`http://18.130.211.172:3000/habits/${userId}`, options); //add links and auth
+        let data = await fetch(`http://18.130.211.172:3000/habits/${data.UserId}`, options); //add links and auth
 
         return data.body.json();
     }
@@ -70,10 +69,13 @@ async function getUserHabits(){
 
 async function getSpecificHabits(e){
     try{
-        e.preventDefault();
-        const response = await fetch(`http://18.130.211.172:3000/habits/${data.UserId}/${data.habit}`, options); //add links and auth
-        const options = {headers: new Headers({}) };
-        const data = response.json();
+        const token = localStorage.getItem("token");
+        const options = {
+          method: "GET",
+          headers: { "Authorization": token}
+        };
+        const data = await fetch(`http://18.130.211.172:3000/habits/${e.target.UserId}/${e.target.habit}`, options); //add links and auth
+        let data = let.body.json();
         return data   
     }
     catch(err){
@@ -99,28 +101,29 @@ async function addHabit(e){
     }
 }
 
-async function deleteHabit(data,newDiv){
+async function deleteHabit(data){
     try{
+        const token = localStorage.getItem("token");
         const options = {
             method: "DELETE",
-            headers: new Headers({
-                "Content-Type":"application/json"})
-            
+            headers: { "Authorization": token }
     }
-    await fetch(`http://18.130.211.172:3000/habits/${data.UserId}/${data.habit}`, options).then(newDiv.remove())
-    
-} catch(err){
-    console.log("Could not delete habit")}
-    
+        const del = await fetch(`http://18.130.211.172:3000/habits/${data.UserId}/${data.habit}`, options)
+        return del.status
+    } catch(err){
+        console.log("Could not delete habit")}
 }
 
 
-async function UpdateHabit(e,data){ //just to update streak
+async function UpdateHabit(data){ //just to update streak
     try{
-        e.preventDefault()
+        const token = localStorage.getItem("token");
         const options = {
             method: "PATCH",
-            headers: new Headers({"Content-Type": "application/json"}),
+            headers: {
+              "Authorization": token,
+              "Content-Type": "application/json"
+            },
         }
         //need a function that checks if it has been updated for today
         let response = await fetch(`http://18.130.211.172:3000/habits/${data.UserId}/${data.habit}`, options)
