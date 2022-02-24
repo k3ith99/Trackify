@@ -14,100 +14,90 @@
     </style>
 
 </head>
-<body class="d-flex h-100 text-center text-white bg-success">
     
-<div class="cover-container w-100 h-100 p-3 mx-auto">
-  <header class="mb-auto d-flex flex-column bg-success fixed-top mb-2 pt-2 px-4 shadow">
-    <div>
-      <h3 class="float-md-start mb-0">Trackify</h3>
-      <nav class="nav nav-masthead justify-content-center float-md-end">
-        <a class="nav-link active text-white" aria-current="page" href="#">Home</a>
-        <a class="nav-link text-white" href="#">Account</a>
-        <a class="nav-link text-white" href="#">Contact</a>
-        <a class="nav-link text-white" href="#">About</a>
-      </nav>
-    </div>
-  </header>
+<body class="cover-container d-flex w-100 h-100 p-3 mx-auto text-center text-white bg-success">
+    <header class="mb-auto d-flex flex-column bg-success fixed-top mb-2 pt-2 px-4 shadow">
+        <div>
+        <h3 class="float-md-start mb-0">Trackify</h3>
+        <nav class="nav nav-masthead justify-content-center float-md-end">
+            <a class="nav-link active text-white" aria-current="page" href="#">Home</a>
+            <a class="nav-link text-white" href="#">Account</a>
+            <a class="nav-link text-white" href="#">Contact</a>
+            <a class="nav-link text-white" href="#">About</a>
+        </nav>
+        </div>
+    </header>
 
-<main class="px-5 mt-5">
-    <div id="homepage-section" style="display:none">
-        <div id="side-boxes" class="">
-            <div id="info" class="shadow m-3 p-5 text-black rounded-3" style="background-color:#a4c48f">
-                <h2>Info</h2>
-                <p>information about the tracker (what it is, what it can be used for, how long they can do it for etc)</p>
+    <main class="px-5 mt-5">
+        <div id="homepage-section">
+            <div id="side-boxes" class="">
+                <div id="info" class="shadow m-3 p-5 text-black rounded-3" style="background-color:#a4c48f">
+                    <h2>Info</h2>
+                    <p>information about the tracker (what it is, what it can be used for, how long they can do it for etc)</p>
+                </div>
+                <div id="login" class="shadow p-5 m-3 rounded-3 text-black" style="background-color:#a4c48f">
+                    <h2>Sign in/Register</h2>
+                    <form action="submit">
+                        <div class="form-floating">
+                            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+                            <label for="floatingInput p-5">Email address</label>
+                        </div>
+                        <div class="form-floating mt-1">
+                            <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+                            <label for="floatingPassword">Password</label>
+                        </div>
+                        <button id="signin" class="w-100 mt-3 btn btn-lg btn-outline-dark" type="submit">Sign in</button>
+                        <button id="register" class="w-100 mt-3 btn btn-lg btn-outline-dark" type="submit">Register</button>
+                    </form>
+                </div>
             </div>
-            <div id="login" class="shadow p-5 m-3 rounded-3 text-black" style="background-color:#a4c48f">
-                <h2>Sign in/Register</h2>
-                <form action="submit">
-                    <div class="form-floating">
-                        <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
-                        <label for="floatingInput p-5">Email address</label>
+            <div id="long-box">
+                <div id="testimonials" class="shadow h-100 m-3 p-5 text-black rounded-3" style="background-color:#a4c48f">
+                    <h2>Testimonials</h2>
+                    <p>"This app is great!" <br> "I feel so motivated to reach my goals with this tracker"</p>
+                </div>
+            </div>
+        </div>
+        <div id="habits-section" >
+            <div id="create-habit" class="shadow p-5 m-3 rounded-3">
+                <h2>Create Habit</h2>
+                <form action="">
+                    <div class="form-floating text-black">
+                        <input type="text" class="form-control" id="title" placeholder="Habit">
+                        <label for="title p-5">Habit</label>
                     </div>
-                    <div class="form-floating mt-1">
-                        <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
-                        <label for="floatingPassword">Password</label>
+                    <div class="form-floating text-black">
+                        <input type="text" class="form-control" id="goal" placeholder="goal">
+                        <label for="goal p-5">Goal</label>
                     </div>
-                    <button id="signin" class="w-100 mt-3 btn btn-lg btn-outline-dark" type="submit">Sign in</button>
-                    <button id="register" class="w-100 mt-3 btn btn-lg btn-outline-dark" type="submit">Register</button>
+                    <h4 class="mt-3">Frequency:</h4>
+                    <div class="btn-group shadow" role="group" aria-label="Basic radio toggle button group">
+                        <input type="radio" class="btn-check" name="btnradio" id="daily" autocomplete="off" checked>
+                        <label class="btn btn-outline-light" for="daily">Daily</label>
+
+                        <input type="radio" class="btn-check" name="btnradio" id="weekly" autocomplete="off">
+                        <label class="btn btn-outline-light" for="weekly">Weekly</label>
+
+                        <input type="radio" class="btn-check" name="btnradio" id="monthly" autocomplete="off">
+                        <label class="btn btn-outline-light" for="monthly">Monthly</label>
+
+                        <input type="radio" class="btn-check" name="btnradio"  autocomplete="off">
+                        <label id="custom" class="btn btn-outline-light" for="custom">Custom</label>
+                    </div>
+                    <div class="mt-3 form-floating" id="textbox"></div>
                 </form>
+                <button class="shadow btn m-4 btn-outline-light">Create Habit</button>
             </div>
-        </div>
-        <div id="long-box">
-            <div id="testimonials" class="shadow h-100 m-3 p-5 text-black rounded-3" style="background-color:#a4c48f">
-                <h2>Testimonials</h2>
-                <p>"This app is great!" <br> "I feel so motivated to reach my goals with this tracker"</p>
-            </div>
-        </div>
-    </div>
-    <div id="habits-section" class="">
-        <div id="create-habit" class="shadow p-5 m-3 rounded-3">
-            <h2>Create Habit</h2>
-            <form action="">
-                <div class="form-floating text-black">
-                    <input type="text" class="form-control" id="title" placeholder="Habit">
-                    <label for="title p-5">Habit</label>
-                </div>
-                <div class="form-floating text-black">
-                    <input type="text" class="form-control" id="goal" placeholder="goal">
-                    <label for="goal p-5">Goal</label>
-                </div>
-                <h4 class="mt-3">Frequency:</h4>
-                <div class="btn-group shadow" role="group" aria-label="Basic radio toggle button group">
-                    <input type="radio" class="btn-check" name="btnradio" id="daily" autocomplete="off" checked>
-                    <label class="btn btn-outline-light" for="daily">Daily</label>
-                    <input type="radio" class="btn-check" name="btnradio" id="weekly" autocomplete="off">
-                    <label class="btn btn-outline-light" for="weekly">Weekly</label>
-                    <input type="radio" class="btn-check" name="btnradio" id="monthly" autocomplete="off">
-                    <label class="btn btn-outline-light" for="monthly">Monthly</label>
-                    <input type="radio" class="btn-check" name="btnradio" id="custom" autocomplete="off">
-                    <label class="btn btn-outline-light" for="custom">Custom</label>
-                    <div id="textbox"></div>
-                </div>
-            </form>
-            <button class="shadow btn m-4 btn-outline-light">Create Habit</button>
-        </div>
-        <!-- <div id="habit-cards"> -->
-            <div class="habit shadow p-5 m-3 rounded-3 text-black">
-                <h2 class="habit-title">Drink 2L of Water</h2>
-                <p class="pt-3">Goal:<br>Frequency:<br>Streak:<br></p>
-                <button class="complete shadow mx-3 mt-3 btn btn-lg btn-outline-dark" type="submit">Complete Habit</button>
-                <button class="delete shadow mx-3 mt-3 btn btn-lg btn-outline-dark" type="submit">Delete Habit</button>
-            </div> 
-            <div class="habit shadow p-5 m-3 rounded-3 text-black">
-                <h2 class="habit-title">Drink 3L of Water</h2>
-                <p class="pt-3">Goal:<br>Frequency:<br>Streak:<br></p>
-                <button class="complete shadow mt-3 mx-3 btn btn-lg btn-outline-dark" type="submit">Complete Habit</button>
-                <button class="delete shadow mt-3 mx-3 btn btn-lg btn-outline-dark" type="submit">Delete Habit</button>
-            </div>
-            <div class="habit shadow p-5 m-3 rounded-3 text-black">
-                <h2 class="habit-title">Drink 4L of Water</h2>
-                <p class="pt-3">Goal:<br>Frequency:<br>Streak:<br></p>
-                <button class="complete shadow mt-3 mx-3 btn btn-lg btn-outline-dark" type="submit">Complete Habit</button>
-                <button class="delete shadow mt-3 mx-3 btn btn-lg btn-outline-dark" type="submit">Delete Habit</button>
-            </div> 
-        <!-- </div> -->
-    </div>
-  </main>
- </div>   
-</body>
+            <!-- <div id="habit-cards"> -->
+                <div class="habit shadow p-5 m-3 rounded-3 text-black">
+                    <h2 class="habit-title">k</h2>
+                    <h6 id="habit-goal" class="pt-3">Goal: </h6>
+                    <h6 id="habit-frequency">Frequency: </h6>
+                    <h6 id="habit-streak">Streak: </h6>
+                    <button class="complete shadow mx-3 mt-3 btn btn-lg btn-outline-dark" type="submit">Complete Habit</button>
+                    <button class="delete shadow mx-3 mt-3 btn btn-lg btn-outline-dark" type="submit">Delete Habit</button>
+                </div> 
+            </div>  
+        </main>
+    </body>   
 </html>
