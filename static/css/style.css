@@ -1,28 +1,47 @@
 @media (min-width: 768px) {
-    #homepage-sections {
+    #homepage-section {
         display: flex;
     }
 
-    #habit-card {
-        display: flex;
-        flex-direction: row;
+    #habits-section {
+        display:grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr repeat(auto);
+        grid-template-areas: 
+        "create create"
+        "habit habit"
         
+       
+    } 
+
+    #habit-cards {
+        max-height: 430px;
+        grid-area: habit;
     }
 
-}
+    #create-habit {
+        max-height: 430px;
+        grid-area: create;
+    }
 
-@media (min-width: 700px) {
-    #habit-section {
+
+}    
+
+@media (max-width: 767px) {
+    .btn-group {
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
     }
 }
 
-.habit {
-    background-color:#a4c48f;
-    
-}
+
 
 #create-habit {
     background-color:#a4c48f;
+    /* max-height: 450px; */
+    justify-items: center;
 }
+.habit {
+    background-color:#a4c48f; 
+    
+} 
