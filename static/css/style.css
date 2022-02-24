@@ -3,24 +3,24 @@
         display: flex;
     }
 
-    #habits-section {
+    /* #habits-section {
         display:grid;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr repeat(auto);
         grid-template-rows: 1fr repeat(auto);
         grid-template-areas: 
-        "create create"
+        "create create create"
         "habit habit"
         
        
-    } 
+    }  */
 
     #habit-cards {
-        max-height: 430px;
+        /* max-height: 430px; */
         grid-area: habit;
     }
 
     #create-habit {
-        max-height: 430px;
+        /* max-height: 430px; */
         grid-area: create;
     }
 
@@ -45,3 +45,7 @@
     background-color:#a4c48f; 
     
 } 
+
+.sections {
+    display: none;
+}
