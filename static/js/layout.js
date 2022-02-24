@@ -91,7 +91,7 @@ function updateHabit(data){
 
 
 
-module.exports = {showHabitsSection, appendHabit,deleteHabit};
+module.exports = {showHabitsSection, appendHabit, updateHabit};
 
 
 signin.addEventListener('click', showHabitsSection)
