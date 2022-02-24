@@ -5,16 +5,33 @@ const custom = document.getElementById("custom")
 
 
 
+
 const showTextbox = (e) => {
     // e.preventDefault();
     const textbox = document.getElementById('textbox')
     const newText = document.createElement('input')
     newText.setAttribute('type', 'text');
     newText.setAttribute('class', 'form-control')
+    newText.setAttribute('class', 'shadow')
     textbox.append(newText);
 }
 
 custom.addEventListener('click', showTextbox)
+
+const testbtn = document.getElementById('testbtn')
+
+testbtn.addEventListener('click', showHomepage)
+
+function showTest(){
+    const test = document.getElementById('test');
+    const habit = document.createElement('button');
+    habit.append(test);
+}
+
+
+
+
+
 
 
 
@@ -23,7 +40,7 @@ const habitCards = document.getElementById("habit-cards")
 signin.addEventListener('click', showHabitsSection)
 const deletebtn = document.getElementById("delete")
 const updatebtn = document.getElementById("complete")
-const requests = require("./requests")
+
 
 
 
@@ -92,19 +109,17 @@ function updateHabit(data){
 
 }
 
-
-
-
-module.exports = {showHabitsSection, appendHabit,};
-
-
-
-signin.addEventListener('click', showHabitsSection)
-
-function showHabitsSection(e) {
-    e.preventDefault();
-    homepage.innerHTML = e.target.style.display('none');
+function showHomepage() {
+    let info = document.getElementById("info");
+    info.createElement('h2').textContent += "Info"
+    
 }
+
+
+
+
+module.exports = {showHabitsSection, appendHabit};
+
 
 
 

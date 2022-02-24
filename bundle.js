@@ -6,16 +6,33 @@ const custom = document.getElementById("custom")
 
 
 
+
 const showTextbox = (e) => {
     // e.preventDefault();
     const textbox = document.getElementById('textbox')
     const newText = document.createElement('input')
     newText.setAttribute('type', 'text');
     newText.setAttribute('class', 'form-control')
+    newText.setAttribute('class', 'shadow')
     textbox.append(newText);
 }
 
 custom.addEventListener('click', showTextbox)
+
+const testbtn = document.getElementById('testbtn')
+
+testbtn.addEventListener('click', showHomepage)
+
+function showTest(){
+    const test = document.getElementById('test');
+    const habit = document.createElement('button');
+    habit.append(test);
+}
+
+
+
+
+
 
 
 
@@ -24,7 +41,7 @@ const habitCards = document.getElementById("habit-cards")
 signin.addEventListener('click', showHabitsSection)
 const deletebtn = document.getElementById("delete")
 const updatebtn = document.getElementById("complete")
-const requests = require("./requests")
+
 
 
 
@@ -93,178 +110,20 @@ function updateHabit(data){
 
 }
 
-
-
-
-module.exports = {showHabitsSection, appendHabit,};
-
-
-
-signin.addEventListener('click', showHabitsSection)
-
-function showHabitsSection(e) {
-    e.preventDefault();
-    homepage.innerHTML = e.target.style.display('none');
-}
-
-
-
-
-
-},{"./requests":2}],2:[function(require,module,exports){
-const layout = require("./layout")
-
-
-async function requestReg(e){
-    e.preventDefault();
-    try{
-        const options = {
-            method: "POST", 
-            headers: {'Content-Type': 'application/json'},
-            body: JSON.stringify(Object.fromEntries(new FormData(e.target)))
-        }
-        const data = await fetch("http://18.130.211.172:3000/auth/register", options)
-        const response = await data.json();
-        if (response.err){throw Error(response.err)}
-        requestLogin(e);
-    } catch(err){
-        console.log("error registrating user")
-    }
-}
-async function requestLogin(e){
-    e.preventDefault();
-    try{
-        const options = {
-            method: "POST",
-            headers: {"Content-Type": "application/json"},
-            body: JSON.stringify(Object.fromEntries(new FormData(e.target)))
-        }
-        const data = await fetch("http://18.130.211.172:3000/auth/login", options)
-        const response = await data.json();
-        if(!response.success){throw new Error("login not authorised")}
-        login (response.token)
-        //login - you receive tokens
-
-    }
-    catch(err){
-        console.log("error loging in")
-    }
-}
-
-function login(token){
-    const user = jwt_decode(token);
-    localStorage.setItem("token", token);
-    localStorage.setItem("username", user.username);
-    localStorage.setItem("userEmail", user.email);
-    window.location.hash = '#feed';
-}
-
-function logout(){
-    localStorage.clear();
-    window.location.hash = '#login';
-}
-
-function currentUser(){
-    const username = localStorage.getItem('username')
-    return username;
-}
-
-
-
-
-
-
-
-
-async function getUserHabits(data){
-    try{
-        const options = { 
-            headers: new Headers({
-
-            })
-        };
-        const data = await fetch(`http://18.130.211.172:3000/habits/${data.UserId}`, options); //add links and auth
-        //find a way to store userid in browser using token, localstorage 
-        //store token in localstorage
-        //add login and register fetch requests functions
-        // /auth/register do login too on this side
-        // /auth/login
-        //using hashes
-
-        const response = data.json();
-       //return data
-        layout.showHabitsSection(response)
-    }
-    catch(err){
-        reject("Error retrieving user habits from server")
-    }
-}
-
-async function getSpecificHabits(e,data){
-    try{
-        e.preventDefault();
-        const response = await fetch(`http://18.130.211.172:3000/habits/${data.UserId}/${data.habit}`, options); //add links and auth
-        const options = {headers: new Headers({}) };
-        const data = response.json();
-        return data   
-    }
-    catch(err){
-        reject("Error retrieving specific habits from server")
-    }
-}
-
-async function addHabit(e){
-    try{
-        const data = { streak: e.target.value
-        }
-        const options = {
-            method: "POST",
-            headers: new Headers({"Content-Type": "application/json"}), //add auth
-            body: JSON.stringify(data)
-        }
-        let response = await fetch("http://18.130.211.172:3000/habits/", options);
-        response  = await response.json();
-        layout.appendHabit(response)
-
-    }
-    catch(err){
-        console.log("Could not add new habit")
-    }
-}
-
-async function deleteHabit(data,newDiv){
-    try{
-        const options = {
-            method: "DELETE",
-            headers: new Headers({
-                "Content-Type":"application/json"})
-            
-    }
-    await fetch(`http://18.130.211.172:3000/habits/${data.UserId}/${data.habit}`, options).then(newDiv.remove())
-    
-} catch(err){
-    console.log("Could not delete habit")}
+function showHomepage() {
+    let info = document.getElementById("info");
+    info.createElement('h2').textContent += "Info"
     
 }
 
 
-async function UpdateHabit(e,data){ //just to update streak
-    try{
-        e.preventDefault()
-        const options = {
-            method: "PATCH",
-            headers: new Headers({"Content-Type": "application/json"}),
-        }
-        //need a function that checks if it has been updated for today
-        let response = await fetch(`http://18.130.211.172:3000/habits/${data.UserId}/${data.habit}`, options)
-        response = await response.json()
-        return response
-    }
-    catch(err){
-        console.log("Habit could not be updated")
-    }
-}
 
-module.exports = { UpdateHabit , getSpecificHabits , getUserHabits , deleteHabit, addHabit, requestLogin, requestReg}
 
-},{"./layout":1}]},{},[1]);
+module.exports = {showHabitsSection, appendHabit};
+
+
+
+
+
+
+},{}]},{},[1]);
