@@ -2,7 +2,7 @@ const signin = document.getElementById("signin");
 const homepage = document.getElementById("homepage-section")
 const habits = document.getElementById("habits-section")
 const custom = document.getElementById("custom")
-const createbtn = document.querySelector("#shadow btn m-4 btn-outline-light")
+
 
 
 const showTextbox = (e) => {
@@ -17,7 +17,7 @@ custom.addEventListener('click', showTextbox)
 
 
 const habitCards = document.getElementById("habit-cards")
-const habitsHTML = require("../templates/habits")
+//const habitsHTML = require("../templates/habits")
 signin.addEventListener('click', showHabitsSection)
 const deletebtn = document.getElementById("delete")
 const updatebtn = document.getElementById("complete")
