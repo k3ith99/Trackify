@@ -7,18 +7,20 @@ const custom = document.getElementById("custom")
 
 
 const showTextbox = (e) => {
-    e.preventDefault();
+    // e.preventDefault();
     const textbox = document.getElementById('textbox')
     const newText = document.createElement('input')
     newText.setAttribute('type', 'text');
-    newText.append(textbox);
+    newText.setAttribute('class', 'form-control')
+    textbox.append(newText);
 }
 
 custom.addEventListener('click', showTextbox)
 
 
+
 const habitCards = document.getElementById("habit-cards")
-const habitsHTML = require("../templates/habits")
+//const habitsHTML = require("../templates/habits")
 signin.addEventListener('click', showHabitsSection)
 const deletebtn = document.getElementById("delete")
 const updatebtn = document.getElementById("complete")
@@ -31,11 +33,12 @@ const requests = require("./requests")
 
 
 
-function showHabitsSection(data) {
-    //e.preventDefault();
-    //homepage.innerHTML = target.style.display.none; //remove e potentially
-    for (let key of data){
-        habitCards.innerHTML+=habitsHTML(key)}
+function showHabitsSection() {
+    e.preventDefault();
+    homepage.style.display="none"; //remove e potentially
+    // habits.style.display="block"
+    // for (let key of data){
+    //     habitCards.innerHTML+=habitsHTML(key)}
 
 }
 
@@ -56,11 +59,11 @@ function formatCard(newDiv, data){
     //creating elements
     const habit = document.createElement("h2")
     habit.setAttribute("class", "title")
-    const goal = document.createElement("h4")
+    const goal = document.createElement("h6")
     goal.setAttribute("class", "goal")
-    const frequency = document.createElement("h4")
+    const frequency = document.createElement("h6")
     frequency.setAttribute("class", "frequency")
-    const streak = document.createElement("h4")
+    const streak = document.createElement("h6")
     streak.setAttribute("class", "streak")
     const habitbtn = document.createElement("button")
     habitbtn.setAttribute("type", "submit")
@@ -92,7 +95,9 @@ function updateHabit(data){
 
 
 
+
 module.exports = {showHabitsSection, appendHabit,};
+
 
 
 signin.addEventListener('click', showHabitsSection)
@@ -106,7 +111,7 @@ function showHabitsSection(e) {
 
 
 
-},{"../templates/habits":3,"./requests":2}],2:[function(require,module,exports){
+},{"./requests":2}],2:[function(require,module,exports){
 const layout = require("./layout")
 
 
@@ -262,26 +267,4 @@ async function UpdateHabit(e,data){ //just to update streak
 
 module.exports = { UpdateHabit , getSpecificHabits , getUserHabits , deleteHabit, addHabit, requestLogin, requestReg}
 
-},{"./layout":1}],3:[function(require,module,exports){
-
-function habitsHTML({habit,goal,frequency,streak}){
-    return  
-
-habits.innerHTML = 
-
-`<div class="habit p-5 m-3 rounded-3 text-black" style="background-color:#a4c48f">
-    <h2 class="title">${habit}</h2>
-    <h4 class="goal">Goal: ${goal}</h4>
-    <h4 class="frequency">Frequency: ${frequency}</h4>
-    <h4 class="streak">Streak: ${streak}</h4>
-    <button id="complete" class="mt-3 mx-3 btn btn-lg btn-outline-dark" type="submit">Complete Habit</button>
-</div>`
-
-}
-
-module.exports = habitsHTML;
-
-
-
-
-},{}]},{},[1]);
+},{"./layout":1}]},{},[1]);

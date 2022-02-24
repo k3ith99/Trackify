@@ -6,14 +6,16 @@ const custom = document.getElementById("custom")
 
 
 const showTextbox = (e) => {
-    e.preventDefault();
+    // e.preventDefault();
     const textbox = document.getElementById('textbox')
     const newText = document.createElement('input')
     newText.setAttribute('type', 'text');
-    newText.append(textbox);
+    newText.setAttribute('class', 'form-control')
+    textbox.append(newText);
 }
 
 custom.addEventListener('click', showTextbox)
+
 
 
 const habitCards = document.getElementById("habit-cards")
@@ -30,11 +32,12 @@ const requests = require("./requests")
 
 
 
-function showHabitsSection(data) {
-    //e.preventDefault();
-    //homepage.innerHTML = target.style.display.none; //remove e potentially
-    for (let key of data){
-        habitCards.innerHTML+=habitsHTML(key)}
+function showHabitsSection() {
+    e.preventDefault();
+    homepage.style.display="none"; //remove e potentially
+    // habits.style.display="block"
+    // for (let key of data){
+    //     habitCards.innerHTML+=habitsHTML(key)}
 
 }
 
@@ -55,11 +58,11 @@ function formatCard(newDiv, data){
     //creating elements
     const habit = document.createElement("h2")
     habit.setAttribute("class", "title")
-    const goal = document.createElement("h4")
+    const goal = document.createElement("h6")
     goal.setAttribute("class", "goal")
-    const frequency = document.createElement("h4")
+    const frequency = document.createElement("h6")
     frequency.setAttribute("class", "frequency")
-    const streak = document.createElement("h4")
+    const streak = document.createElement("h6")
     streak.setAttribute("class", "streak")
     const habitbtn = document.createElement("button")
     habitbtn.setAttribute("type", "submit")
