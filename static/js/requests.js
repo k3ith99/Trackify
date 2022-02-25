@@ -74,8 +74,8 @@ async function getSpecificHabits(e){
           method: "GET",
           headers: { "Authorization": token}
         };
-        const data = await fetch(`http://18.130.211.172:3000/habits/${e.target.UserId}/${e.target.habit}`, options); //add links and auth
-        let data = let.body.json();
+        let data = await fetch(`http://18.130.211.172:3000/habits/${e.target.UserId}/${e.target.habit}`, options); //add links and auth
+        data = let.body.json();
         return data   
     }
     catch(err){

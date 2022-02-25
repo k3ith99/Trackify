@@ -4,7 +4,12 @@ const habits = document.getElementById("habits-section")
 const custom = document.getElementById("custom")
 const requests = require('./requests');
 
-
+const token = localStorage.getItem("token");
+if(token){
+  showHabitsSection();
+} else {
+  showHomepage();
+}
 
 
 const showTextbox = (e) => {
@@ -159,7 +164,6 @@ function updateHabit(data){
 
 
 module.exports = {showHabitsSection, appendHabit};
-
 
 
 
