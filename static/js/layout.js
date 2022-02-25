@@ -63,6 +63,7 @@ function showHomepage() {
     let signin = document.createElement('button')
     let register = document.createElement('button')
 
+    form.setAttribute('id', 'login-form')
     loginDiv.setAttribute('id', 'login')
     loginDiv.setAttribute('style', 'background-color:#a4c48f')
     loginDiv.classList.add('shadow', 'rounded-3', 'm-3', 'p-5', 'text-black')
@@ -74,10 +75,12 @@ function showHomepage() {
     email.setAttribute('id', 'floatingInput')
     email.setAttribute('class', 'form-control')
     email.setAttribute('placeholder', 'name@example.com') 
+    email.setAttribute('name', 'email')
     password.setAttribute('type', 'password')
     password.classList.add('text-black', 'form-control')
     password.setAttribute('id', 'floatingPassword')
     password.setAttribute('placeholder', 'Password')
+    password.setAttribute('name', 'password')
     labelE.setAttribute('for', 'floatingInput')
     labelE.textContent = "Email address"
     labelP.setAttribute('for', 'floatingPassword')
@@ -118,6 +121,12 @@ function showHomepage() {
     testDiv.append(paraT)
     longBox.append(testDiv)
 
+    const loginForm = document.querySelector('#login-form');
+    loginForm.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      await requests.requestReg(e);
+      await requests.requestLogin(e);
+    });
 }
 
 function createHabit() {
@@ -187,8 +196,8 @@ function createHabit() {
 
 
 function showHabitsSection() {
-    e.preventDefault();
     homepage.style.display="none"; //remove e potentially
+    createHabit();
     // habits.style.display="block"
     // for (let key of data){
     //     habitCards.innerHTML+=habitsHTML(key)}
@@ -252,7 +261,3 @@ function updateHabit(data){
 
 
 module.exports = {showHabitsSection, appendHabit};
-
-
-
-

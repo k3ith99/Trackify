@@ -3,10 +3,12 @@ async function requestReg(e){
         const options = {
             method: "POST", 
             headers: {"Content-Type": "application/json"},
-            body: JSON.stringify(e.target)
+            body: JSON.stringify({
+              "email": e.target.floatingInput.value,
+              "password": e.target.floatingPassword.value
+            })
         }
         await fetch("http://18.130.211.172:3000/auth/register", options)
-        requestLogin(e);
     } catch(err){
         console.log(err)
         console.log("error registrating user")
@@ -18,12 +20,16 @@ async function requestLogin(e){
         const options = {
             method: "POST",
             headers: {"Content-Type": "application/json"},
-            body: JSON.stringify(e.target)
+            body: JSON.stringify({
+              email: e.target.floatingInput.value,
+              password: e.target.floatingPassword.value
+            })
         }
         let data = await fetch("http://18.130.211.172:3000/auth/login", options)
         if(!data.ok){throw new Error("login not authorised")}
 
-        const token = await data.body.json().token;
+        const token = data;
+        console.log(token);
         const user = jwt_decode(token);
         localStorage.setItem("token", token);
         localStorage.setItem("userId", user.UserId);
