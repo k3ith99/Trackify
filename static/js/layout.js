@@ -4,11 +4,12 @@ const habits = document.getElementById("habits-section")
 const custom = document.getElementById("custom")
 const requests = require('./requests');
 const body = document.querySelector('body')
+const habitsbtn = document.getElementById('habitsbtn')
 
 
 
 
-const showTextbox = (e) => {
+const showTextbox = () => {
     // e.preventDefault();
     const textbox = document.getElementById('textbox')
     const newText = document.createElement('input')
@@ -18,11 +19,12 @@ const showTextbox = (e) => {
     textbox.append(newText);
 }
 
-custom.addEventListener('click', showTextbox)
+// custom.addEventListener('click', showTextbox)
 
 const testbtn = document.getElementById('testbtn')
 
-body.addEventListener('click', showHomepage)
+testbtn.addEventListener('click', showHomepage)
+habitsbtn.addEventListener('click', createHabit)
 
 function showHomepage() {
     //id=info
@@ -111,6 +113,56 @@ function showHomepage() {
     testDiv.append(paraT)
     longBox.append(testDiv)
 
+}
+
+function createHabit() {
+    let createHabit = document.getElementById('create-habit')
+    // let btn = document.createElement('button')
+    let addHabit = document.createElement('div')
+    let create = document.createElement('h2')
+    let createForm = document.createElement('form')
+    // let radio = input.setAttribute('type', 'radio')
+    let habit = document.createElement('input')
+    // let goal = document.createElement('input')
+    // let frequency = document.createElement('h4').textContent += "Frequency"
+    // let frequencyGroup = createDiv.classList.add('btn-group', 'shadow')
+    // let daily = radio.setAttribute('id', 'daily')
+    // let weekly = radio.setAttribute('id', 'weekly')
+    // let monthly = radio.setAttribute('id', 'monthly')
+    // let custom = radio.setAttribute('id', 'custom')
+    let divH = document.createElement('div')
+    // let divG = document.createElement('div')
+    let labelH = document.createElement('label')
+    // let labelG = document.createElement('label')
+
+    addHabit.setAttribute('id', 'add-habit')
+    addHabit.classList.add('shadow', 'p-5', 'm-3', 'rounded-3')
+    createForm.setAttribute('action', 'submit')
+    create.textContent += "Create Habit"
+    habit.setAttribute('class', 'form-control')
+    habit.setAttribute('id', 'habit')
+    habit.setAttribute('type', 'text')
+    habit.setAttribute('placeholder', 'Habit')
+    // goal.setAttribute('class', 'form-control')
+    // goal.setAttribute('id', 'goal')
+    // goal.setAttribute('type', 'text')
+    // goal.setAttribute('placeholder', 'Goal')
+    labelH.setAttribute('class', 'p-5')
+    labelH.setAttribute('for', 'habit')
+    // labelG.setAttribute('class', 'p-5')
+    // labelG.setAttribute('for', 'goal')
+
+    divH.append(labelH)
+    divH.append(habit)
+    addHabit.append(divH)
+    // createHabit.append(addHabit)
+    // goal.append(labelG)
+    console.log(addHabit)
+    
+    // divG.append(goal)
+    // createForm.append(divH)
+    // createForm.append(divG)
+    // createHabit.append(createForm)
 }
 
 
